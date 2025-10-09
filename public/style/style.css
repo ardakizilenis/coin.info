@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --color-primary: #2F73FF;
+  --color-primary-light: #4C8EFF;
+  --accent: darkblue;
+  --color-bg-light: #FFFFFF;
+  --color-bg-dark: #0E1117;
+  --color-text-light: #0E1A2B;
+  --color-text-dark: #FFFFFF;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.fade-in-down {
+  display: inline-block;
+  overflow: hidden;
+}
+.fade-in-down .line {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideFadeIn 1s ease-out forwards;
+}
+.fade-in-down .line2 {
+    animation-delay: 0.6s;
+    color: var(--accent);
+}
+.fade-in-down .line3 {
+    animation-delay: 1.2s;
+}
+.fade-in-down .line4 {
+    animation-delay: 1.8s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif !important;
+}
+
+h1 > span{
+    margin: 10px;
+}
+h1{
+    margin-bottom: 10px;
+}
+li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-dark);
+    text-decoration: none;
+}
+header {
+    padding: 30px 5%;
+}
+
+img.logo {
+    cursor: pointer;
+    width: 100px;
+}
+.nav__links li {
+    padding: 0px 20px;
+}
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav__links li a:hover{
+    color: var(--color-primary)
+}
+#navbarCollapse {
+    background-color: var(--color-text-dark);
+    margin-top: 5px;
+}
+a.navbar-brand {
+    margin-top: 5px;
+}
+
+.heroSearchBar{
+    display: flex;
+    justify-content: center;
+}
+.search-input-hero{
+    border-radius: 50px;
+}
+.search-button-hero{
+    width: 100px;
+    border-radius: 50px;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.cta-buttons {
+    width: 80%;
+}
+.topcoins > button {
+    border-radius: 50px;
+    height: 40px;
+    font-size: large;
+}
+.viewTop50{
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    margin-top: 20px !important;
+}
+.trending{
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
