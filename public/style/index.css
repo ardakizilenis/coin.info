@@ -56,7 +56,6 @@
     padding: 0;
     font-family: "Inter", sans-serif !important;
 }
-
 h1 > span{
     margin: 10px;
 }
@@ -72,7 +71,6 @@ li, a, button {
 header {
     padding: 30px 5%;
 }
-
 img.logo {
     cursor: pointer;
     width: 100px;
@@ -84,7 +82,33 @@ img.logo {
     transition: all 0.3s ease 0s;
 }
 .nav__links li a:hover{
-    color: var(--color-primary)
+    color: var(--color-primary);
+    text-decoration: var(--color-primary);
+}
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+/* Das „unsichtbare“ Pseudo-Element als Linie */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor; /* nutzt die Textfarbe */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+/* Hover-Effekt: Linie wächst von der Mitte nach außen */
+.nav-link:hover::after {
+  width: 100%;
+}
+.active {
+    color: var(--color-primary) !important;
 }
 #navbarCollapse {
     background-color: var(--color-text-dark);
@@ -93,6 +117,7 @@ img.logo {
 a.navbar-brand {
     margin-top: 5px;
 }
+
 
 .heroSearchBar{
     display: flex;

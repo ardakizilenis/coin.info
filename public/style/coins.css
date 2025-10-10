@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --color-primary: #2F73FF;
+  --color-primary-light: #4C8EFF;
+  --accent: darkblue;
+  --color-bg-light: #FFFFFF;
+  --color-bg-dark: #0E1117;
+  --color-text-light: #0E1A2B;
+  --color-text-dark: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+h1 > span{
+    margin: 10px;
+}
+li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-dark);
+    text-decoration: none;
+}
+header {
+    padding: 30px 5%;
+}
+.navbar {
+    background-color: #FFFFFF;
+}
+
+img.logo {
+    cursor: pointer;
+    width: 100px;
+}
+.nav__links li {
+    padding: 0px 20px;
+}
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav__links li a:hover{
+    color: var(--color-primary);
+    text-decoration: var(--color-primary);
+}
+.nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+/* Das „unsichtbare“ Pseudo-Element als Linie */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor; /* nutzt die Textfarbe */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+/* Hover-Effekt: Linie wächst von der Mitte nach außen */
+.nav-link:hover::after {
+  width: 100%;
+}
+.active {
+    color: var(--color-primary) !important;
+}
+
+#navbarCollapse {
+    background-color: var(--color-text-dark);
+    margin-top: 5px;
+}
+a.navbar-brand {
+    margin-top: 5px;
+}
+
+.coinsSearchBar{
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  height: 40px;
+}
+.search-input-coins{
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+.search-button-coins{
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+th {
+  background-color: #f8f9fa;
+  color: #0E1A2B;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e5e7eb;
+}
+td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #f1f3f5;
+  font-size: small;
+  text-align: right;
+}
+/* abwechselnde Zeilenfarben */
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+th:nth-child(4),
+th:nth-child(5),
+th:nth-child(6),
+th:nth-child(7) {
+    text-align: right;
+}
+/* Hover-Effekt */
+tr:hover {
+  background-color: #eef3ff;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3) {
+    text-align: left;
+}
+
+td:nth-child(4),
+td:nth-child(5),
+td:nth-child(6) {
+  text-align: right;
+  font-family: "Roboto Mono", monospace;
+}
+
+.negative {
+  color: #e63946 !important; /* Rot */
+}
+.positive {
+  color: #2ECC71 !important; /* Grün */
+}

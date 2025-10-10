@@ -1,0 +1,38 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand pt-0" href="/">
+        <img class="logo" src="/images/logo.png" alt="MeinBrand">
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse nav__links" id="navbarCollapse">
+        <% const links = [
+          { key: 'index',   label: 'Home',    href: '/home' },
+          { key: 'coins',   label: 'Coins',   href: '/coins' },
+          { key: 'markets', label: 'Markets', href: '/markets' },
+          { key: 'about',   label: 'About',   href: '/about' }
+        ]; %>
+
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <% links.forEach(link => { 
+               const isActive = (locals.currentPage || currentPage) === link.key; %>
+            <li class="nav-item">
+              <a class="nav-link <%= isActive ? 'active' : '' %>"
+                 href="<%= link.href %>"
+                 <%= isActive ? 'aria-current="page"' : '' %>>
+                 <%= link.label %>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
