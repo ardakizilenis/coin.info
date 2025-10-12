@@ -204,7 +204,7 @@ a.navbar-brand {
   color: #4b5563;
   font-size: .95rem;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* 3 Zeilen clamp */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 3.6em;
