@@ -138,47 +138,15 @@ tr:nth-child(even) {
   background-color: #fafafa;
 }
 th:nth-child(1),
-th:nth-child(2) {
+th:nth-child(2),
+th:nth-child(3) {
   text-align: center;
 }
 
-th:nth-child(3) {
-  padding-left: 24px;
-}
-
-th:nth-child(4),
-th:nth-child(5),
-th:nth-child(6),
-th:nth-child(7) {
-    text-align: right;
-}
-/* Hover-Effekt */
-tr:hover {
-  background-color: #eef3ff;
-  transition: background 0.2s ease;
-}
-
 td:nth-child(1),
-td:nth-child(2){
-    text-align: center !important;
-}
-
+td:nth-child(2),
 td:nth-child(3){
-  text-align: left !important;
-}
-
-td:nth-child(4),
-td:nth-child(5),
-td:nth-child(6) {
-  text-align: right;
-  font-family: "Roboto Mono", monospace;
-}
-
-.negative {
-  color: #e63946 !important; /* Rot */
-}
-.positive {
-  color: #2ECC71 !important; /* Grün */
+    text-align: center !important;
 }
 
 /* ========== Responsive Basics ========== */

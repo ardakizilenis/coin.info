@@ -8,18 +8,13 @@
         <form class="coinsSearchBar mt-5" method="GET" action="/coins">
             <input class="form-control me-2 search-input-coins" type="search" name="q" placeholder="🔍 Search for Name or UUID...">
             <button class="btn btn-outline-primary search-button-coins" type="submit">Search</button>
-        </form>
-
+        </form>        
         <table class="table table-striped mt-5">
             <thead>
                 <tr>
                     <th scope="col">Icon</th>
                     <th scope="col">Coin</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">24h</th>
-                    <th scope="col">Market Cap</th>
-                    <th scope="col">Volume</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,16 +25,6 @@
                             <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></th>
                             <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].symbol %></a></td>
                             <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].name %></a></td>
-                            <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) %>$</td>
-                            <% if(parseFloat(coinList[i].change) < 0) { %>
-                                <td class="negative"><%= parseFloat(coinList[i].change)%>%</td>
-                            <% } else if(parseFloat(coinList[i].change) > 0) { %>
-                                <td class="positive"><%= parseFloat(coinList[i].change)%>%</td>
-                            <% } else { %>
-                                <td><%= parseFloat(coinList[i].change)%>%</td>
-                            <% } %>
-                            <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i].marketCap)) %>$</td>
-                            <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i]['24hVolume'])) %></td>
                         </tr>
                     <% }; %>
                 <% } %>

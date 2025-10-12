@@ -50,6 +50,8 @@
     animation-delay: 1.8s;
 }
 
+html { font-size: clamp(14px, 1.2vw, 16px); }
+
 * {
     box-sizing: border-box;
     margin: 0;
