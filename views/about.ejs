@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head.ejs") %>
+  <body>
+    <%- include("partials/navbar.ejs") %>
+
+    <div class="container about">
+        <h1 class="mb-4">About Coin<span style="color: #2F73FF; margin: 0">.</span>info</h1>
+        <p class="muted mb-4">Transparent market overview, trends & news – fast, simple, free.</p>
+
+      <section class="about-section">
+        <h2>The Mission</h2>
+        <p>
+            Coin.info helps you understand the crypto market <strong>easily</strong>: 
+            Prices at a glance, trending signals, curated news, and clear coin profiles – 
+            without overload.
+        </p>
+      </section>
+
+      <section class="about-cards">
+        <div class="card">
+          <h3>🔢 Live Market Data</h3>
+          <p>Top coins with price, 24-hour change, market cap, and volume. Clean formatting, mobile-friendly.</p>
+        </div>
+        <div class="card">
+          <h3>📈 Trending</h3>
+          <p>Time filter (1h–1y) to identify movers. Direct jump to the coin details page.</p>
+        </div>
+        <div class="card">
+          <h3>🗞️ News</h3>
+          <p>Current crypto headlines with source, author, and date – nicely presented as cards, quick to scan.</p>
+        </div>
+        <div class="card">
+          <h3>🪙 Coin-Profile</h3>
+          <p>Icon, price, change, supply progress, ATH, links (website, explorer, GitHub, whitepaper) and much more.</p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>Data Sources</h2>
+        <ul class="bullets">
+          <li><strong>Markets:</strong> Coinranking API (Prices, Market Caps, Volumes, Trendings)</li>
+          <li><strong>News:</strong> Gizmodo / News-API-Feed</li>
+        </ul>
+        <p class="muted small">Trademarks and logos belong to their respective owners. Data may be delayed or incomplete.</p>
+      </section>
+
+      <section class="about-section">
+        <h2>Disclaimer</h2>
+        <p>
+          <strong>NO INVESTMENT ADVICE.</strong> Content is for informational purposes only.
+            Cryptocurrencies are volatile; act responsibly and do your own research.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>Roadmap (Planned Features)</h2>
+        <ul class="bullets">
+          <li>🔔 Price-Alerts & Watchlist</li>
+          <li>🌙 Dark Mode Toggle</li>
+          <li>🔍 Advanced Filters (Sectors/Tags)</li>
+          <li>📊 More Time Periods & Interactive Charts</li>
+          <li>🧩 Portfolio Mock (local only, without custody)</li>
+          <li>🌍 Translations & More Languages</li>
+        </ul>
+      </section>
+
+      <section class="about-section">
+        <h2>FAQ</h2>
+        <details>
+          <summary>How Often Are Prices Updated?</summary>
+          <p>Depending on the endpoint, this can happen every minute to every few minutes. Slight deviations between exchanges are normal.</p>
+        </details>
+        <details>
+          <summary>Why do I sometimes see “-” instead of numbers?</summary>
+          <p>Some endpoints don't return fields (e.g., in searches and for smaller coins). In these cases, Coin.info deliberately doesn't display "NaN."</p>
+        </details>
+        <details>
+          <summary>Can I sort coins by period/change?</summary>
+          <p>Yes – use “Trending” with time filters (1h–1y) and sorting/filtering in the coins list.</p>
+        </details>
+      </section>
+
+      <section class="about-section">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>
+            <h4>Project</h4>
+            <p>Student/side project – Focus: UX, clarity, performance.</p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul class="bullets">
+              <li>E-Mail: <a href="mailto:kizileniso@live.de">kizilenis@live.de</a></li>
+              <li>GitHub: <a href="https://github.com/ardakizilenis" target="_blank" rel="noopener">Arda Kizilenis</a></li>
+              <li>LinkedIn: <a href="https://www.linkedin.com/in/arda-kizilenis-b22180378/" target="_blank" rel="noopener">Arda Kizilenis</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="about-footer">
+        <p class="muted small">© <%= new Date().getFullYear() %> Coin.info</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>

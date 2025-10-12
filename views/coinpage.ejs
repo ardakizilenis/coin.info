@@ -20,10 +20,10 @@
         </div>
         <div class="price-block">
             <div class="price">
-            <%= Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(parseFloat(coin.price)) %>$ 
+            <%= coin.price ? Intl.NumberFormat('en-US', {maximumFractionDigits: 2}).format(parseFloat(coin.price)) + '$' : '-' %>
             </div>
-            <div class="change <%= parseFloat(coin.change) >= 0 ? 'pos' : 'neg' %>">
-            <%= parseFloat(coin.change) %>%
+            <div class="change <%= coin.change ? (parseFloat(coin.change) >= 0 ? 'pos' : 'neg') : '-' %>">
+            <%= coin.change ? parseFloat(coin.change) + '%' : '-' %>
             </div>
         </div>
         </section>
@@ -46,27 +46,27 @@
         <section class="metrics-grid">
         <div class="metric">
             <span>M. Cap</span>
-            <strong><%= Intl.NumberFormat('en-US').format(parseFloat(coin.marketCap)) %>$</strong>
+            <strong><%= coin.marketCap ? Intl.NumberFormat('en-US').format(parseFloat(coin.marketCap)) + '$' : '-' %></strong>
         </div>
         <div class="metric">
             <span>FDV</span>
-            <strong><%= Intl.NumberFormat('en-US').format(parseFloat(coin.fullyDilutedMarketCap)) %>$</strong>
+            <strong><%= coin.fullyDilutedMarketCap ? Intl.NumberFormat('en-US').format(parseFloat(coin.fullyDilutedMarketCap)) + '$' : '-' %></strong>
         </div>
         <div class="metric">
             <span>24h Volume</span>
-            <strong><%= Intl.NumberFormat('en-US').format(parseFloat(coin['24hVolume'])) %></strong>
+            <strong><%= coin['24hVolume'] ? Intl.NumberFormat('en-US').format(parseFloat(coin['24hVolume'])) : '-' %></strong>
         </div>
         <div class="metric">
             <span>Markets / Exchanges</span>
-            <strong><%= coin.numberOfMarkets %> / <%= coin.numberOfExchanges %></strong>
+            <strong><%= coin.numberOfMarkets ? coin.numberOfMarkets : '-' %> / <%= coin.numberOfExchanges ? coin.numberOfExchanges : '-'%></strong>
         </div>
         <div class="metric">
             <span>BTC Price</span>
-            <strong><%= coin.btcPrice %> BTC</strong>
+            <strong><%= coin.btcPrice ? coin.btcPrice : '-' %> BTC</strong>
         </div>
         <div class="metric">
             <span>Listed</span>
-            <strong><%= new Date(coin.listedAt*1000).toLocaleDateString() %></strong>
+            <strong><%= coin.listedAt ? new Date(coin.listedAt*1000).toLocaleDateString() : '-' %></strong>
         </div>
         </section>
 
@@ -86,7 +86,7 @@
         <div class="ath">
             <div>All-Time High</div>
             <strong>
-            <%= Intl.NumberFormat('en-US', {maximumFractionDigits:2}).format(parseFloat(coin.allTimeHigh.price)) %>$
+            <%= coin.allTimeHigh.price ? Intl.NumberFormat('en-US', {maximumFractionDigits:2}).format(parseFloat(coin.allTimeHigh.price)) + '$' : '-' %>
             </strong>
             <small><%= new Date(coin.allTimeHigh.timestamp*1000).toLocaleDateString() %></small>
         </div>

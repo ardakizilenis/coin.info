@@ -40,23 +40,27 @@
       <tbody>
         <% if (locals.coinlist) { %>
           <% const coinList = JSON.parse(locals.coinlist); %>
-            <% for(let i = 0; i<coinList.length; i++) {%>
-                <tr>
-                    <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></th>
-                    <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].symbol %></a></td>
-                    <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].name %></a></td>
-                    <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) %>$</td>
-                    <% if(parseFloat(coinList[i].change) < 0) { %>
-                        <td class="negative"><%= parseFloat(coinList[i].change)%>%</td>
-                    <% } else if(parseFloat(coinList[i].change) > 0) { %>
-                        <td class="positive"><%= parseFloat(coinList[i].change)%>%</td>
-                    <% } else { %>
-                        <td><%= parseFloat(coinList[i].change)%>%</td>
-                    <% } %>
-                    <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i].marketCap)) %>$</td>
-                    <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i]['24hVolume'])) %></td>
-                </tr>
-            <% }; %>
+          <% for(let i = 0; i<coinList.length; i++) {%>
+            <tr>
+              <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></th>
+              <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].symbol %></a></td>
+              <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].name %></a></td>
+              <td><%= coinList[i] ? Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) + '$' : '-' %></td>
+              <% if(coinList[i].change) {%>
+                <% if(parseFloat(coinList[i].change) < 0) { %>
+                  <td class="negative"><%= parseFloat(coinList[i].change) + '%' %></td>
+                <% } else if(parseFloat(coinList[i].change) > 0) { %>
+                  <td class="positive"><%= parseFloat(coinList[i].change) + '%' %></td>
+                <% } else { %>
+                  <td><%= parseFloat(coinList[i].change) + '%' %></td>
+                <% } %>
+              <% } else { %>
+                <td>-</td>
+              <% } %>  
+              <td><%= coinList[i].marketCap ? Intl.NumberFormat('en-US').format(parseFloat(coinList[i].marketCap)) + '$' : '-' %></td>
+              <td><%= coinList[i]['24hVolume'] ? Intl.NumberFormat('en-US').format(parseFloat(coinList[i]['24hVolume'])) : '-' %></td>
+            </tr>
+          <% } %>
         <% } %>
       </tbody>
     </table>
