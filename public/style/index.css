@@ -142,7 +142,7 @@ a.navbar-brand {
     height: 40px;
     font-size: large;
 }
-.viewTop50{
+.viewTop100{
     background-color: var(--accent);
     border: 1px solid var(--accent);
     margin-top: 20px !important;

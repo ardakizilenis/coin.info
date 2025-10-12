@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head.ejs") %>
+<body>
+  <%- include("partials/navbar.ejs") %>
+
+  <div class="container mt-3">
+    <h1 class="mb-4">🔥 Trending Coins Today</h1>
+    <h6 class="mb-4">Monitor todays trending Coins and view their Price Change within a Time Period:</h6>
+
+    <!-- Zeitfilter -->
+    <div class="time-filter mb-4">
+      <form action="/trending" method="get" class="btn-group d-flex justify-content-between gap-1" role="group">
+        <% const times = ["1h","3h","12h","24h","7d","30d","3m","1y"]; %>
+        <% times.forEach(t => { %>
+          <button 
+            name="timePeriod" 
+            value="<%= t %>" 
+            type="submit" 
+            class="btn <%= locals.timePeriod === t ? 'btn-primary' : 'btn-outline-primary' %>">
+            <%= t %>
+          </button>
+        <% }) %>
+      </form>
+    </div>
+
+    <!-- Tabelle -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Icon</th>
+          <th>Coin</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Market Cap</th>
+          <th>24h Volume</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (locals.coinlist) { %>
+          <% const coinList = JSON.parse(locals.coinlist); %>
+            <% for(let i = 0; i<coinList.length; i++) {%>
+                <tr>
+                    <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></th>
+                    <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].symbol %></a></td>
+                    <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].name %></a></td>
+                    <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) %>$</td>
+                    <% if(parseFloat(coinList[i].change) < 0) { %>
+                        <td class="negative"><%= parseFloat(coinList[i].change)%>%</td>
+                    <% } else if(parseFloat(coinList[i].change) > 0) { %>
+                        <td class="positive"><%= parseFloat(coinList[i].change)%>%</td>
+                    <% } else { %>
+                        <td><%= parseFloat(coinList[i].change)%>%</td>
+                    <% } %>
+                    <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i].marketCap)) %>$</td>
+                    <td><%= Intl.NumberFormat('en-US').format(parseFloat(coinList[i]['24hVolume'])) %></td>
+                </tr>
+            <% }; %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

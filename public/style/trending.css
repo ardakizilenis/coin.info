@@ -183,18 +183,9 @@ td:nth-child(6) {
 
 /* ========== Responsive Basics ========== */
 
-/* Fluidere Typografie */
-
-/* Suchleiste darf umbrechen */
-.coinsSearchBar {
-  flex-wrap: wrap;
-}
-.search-input-coins {
-  min-width: 220px;
+.btn{
   border-radius: 50px !important;
 }
-
-/* Navbar: enger auf kleineren Viewports */
 
 /* Tablet */
 @media (max-width: 768px) {

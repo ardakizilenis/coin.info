@@ -42,6 +42,29 @@ app.get("/coins", (req, res) => {
     }
 })
 
+app.get("/trending", (req, res) => {
+    if (req.query.timePeriod) {
+        fetch(`${baseUrl}/coins/trending?timePeriod=${req.query.timePeriod}`, options)
+            .then((response) => response.json())
+            .then((result) => {
+                console.log(result.data.coins[0]);
+                res.render("trending.ejs", {
+                    currentPage : "trending",
+                    coinlist : JSON.stringify(result.data.coins)
+                })
+            })
+    } else {
+        fetch(`${baseUrl}/coins/trending`, options)
+            .then((response) => response.json())
+            .then((result) => {
+                res.render("trending.ejs", {
+                    currentPage : "trending",
+                    coinlist : JSON.stringify(result.data.coins)
+                })
+            })
+    }
+})
+
 app.get("/search", (req, res) => {
     const query = (req.query.q || "").toLowerCase();
     fetch(`${baseUrl}/search-suggestions?query=${query}`, options)

@@ -19,12 +19,12 @@
             </div>
             <div class="cta-buttons container mx-auto">
                 <form class="heroSearchBar mt-3" method="GET" action="/search">
-                    <input class="form-control me-2 search-input-hero" type="search" name="q" placeholder="🔍 Search for Name or UUID...">
+                    <input class="form-control me-2 search-input-hero" type="search" name="q" placeholder="🔍 Search Name, Symbol or Contract-Adress...">
                     <button class="btn btn-outline-primary search-button-hero" type="submit">Search</button>
                 </form>
                 <form class="topcoins d-flex flex-column">
-                    <button type="button" class="viewTop50 btn btn-primary my-2" onclick="window.location.href='/coins'">View The Top 50</button>
-                    <button type="submit" class="trending btn btn-outline-primary">Trending Coins Today</button>
+                    <button type="button" class="viewTop100 btn btn-primary my-2" onclick="window.location.href='/coins'">View The Top 100</button>
+                    <button type="button" class="trending btn btn-outline-primary" onclick="window.location.href='/trending'">Trending Coins Today</button>
                 </form>
             </div>
         </div>

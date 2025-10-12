@@ -106,6 +106,26 @@ a.navbar-brand {
   border-radius: 50px;
 }
 
+.time-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.time-filter .btn {
+  min-width: 70px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+.time-filter .btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.time-filter .btn-outline-primary:hover {
+  background-color: var(--color-primary-light);
+  color: #fff;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
