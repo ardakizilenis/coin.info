@@ -83,7 +83,7 @@ a.navbar-brand {
     margin-top: 5px;
 }
 
-
+.about { padding-top: 2rem; padding-bottom: 3rem; }
 .about-hero h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .25rem; }
 .muted { color: #6b7280; }
 .small { font-size: .9rem; }
