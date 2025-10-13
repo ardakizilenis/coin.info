@@ -45,7 +45,7 @@
               <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></th>
               <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].symbol %></a></td>
               <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].name %></a></td>
-              <td><%= coinList[i] ? Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) + '$' : '-' %></td>
+              <td><%= coinList[i].price ? Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) + '$' : '-' %></td>
               <% if(coinList[i].change) {%>
                 <% if(parseFloat(coinList[i].change) < 0) { %>
                   <td class="negative"><%= parseFloat(coinList[i].change) + '%' %></td>
