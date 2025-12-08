@@ -49,10 +49,9 @@ app.get("/trending", (req, res) => {
         fetch(`${baseUrl}/coins/trending?timePeriod=${req.query.timePeriod}`, options)
             .then((response) => response.json())
             .then((result) => {
-                console.log(result.data.coins[0]);
                 res.render("trending.ejs", {
                     currentPage : "trending",
-                    coinlist : JSON.stringify(result.data.coins)
+                    coinlist : JSON.stringify(result.data.coins.coins)
                 })
             })
     } else {
@@ -61,7 +60,7 @@ app.get("/trending", (req, res) => {
             .then((result) => {
                 res.render("trending.ejs", {
                     currentPage : "trending",
-                    coinlist : JSON.stringify(result.data.coins)
+                    coinlist : JSON.stringify(result.data.coins.coins)
                 })
             })
     }

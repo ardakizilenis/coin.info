@@ -42,7 +42,7 @@
           <% const coinList = JSON.parse(locals.coinlist); %>
           <% for(let i = 0; i<coinList.length; i++) {%>
             <tr>
-              <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></th>
+              <td><a href="/coinpage/<%=coinList[i].uuid%>"><img src=<%= coinList[i].iconUrl%> alt="icon" style="width: 20px;" ></a></td>
               <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].symbol %></a></td>
               <td><a href="/coinpage/<%=coinList[i].uuid%>"><%= coinList[i].name %></a></td>
               <td><%= coinList[i].price ? Intl.NumberFormat('en-US').format(parseFloat(coinList[i].price).toFixed(2)) + '$' : '-' %></td>
