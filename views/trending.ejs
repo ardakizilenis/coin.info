@@ -39,6 +39,7 @@
       </thead>
       <tbody>
         <% if (locals.coinlist) { %>
+          <% console.log(locals); %>
           <% const coinList = JSON.parse(locals.coinlist); %>
           <% for(let i = 0; i<coinList.length; i++) {%>
             <tr>

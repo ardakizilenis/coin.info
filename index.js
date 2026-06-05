@@ -51,7 +51,7 @@ app.get("/trending", (req, res) => {
             .then((result) => {
                 res.render("trending.ejs", {
                     currentPage : "trending",
-                    coinlist : JSON.stringify(result.data.coins.coins)
+                    coinlist : JSON.stringify(result.data.coins)
                 })
             })
     } else {
@@ -60,7 +60,7 @@ app.get("/trending", (req, res) => {
             .then((result) => {
                 res.render("trending.ejs", {
                     currentPage : "trending",
-                    coinlist : JSON.stringify(result.data.coins.coins)
+                    coinlist : JSON.stringify(result.data.coins)
                 })
             })
     }
