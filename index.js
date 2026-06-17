@@ -29,7 +29,6 @@ app.get("/coins", (req, res) => {
                     currentPage : "search",
                     coinlist : JSON.stringify(result.data.coins)
                 });
-                console.log(result.data.coins);
             })
     }
     else{
